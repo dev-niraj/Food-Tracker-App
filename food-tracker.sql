@@ -8,11 +8,12 @@ create table food (
     name text not null,
     protein integer not null,
     carbohydrates integer not null,
+    fat integer not null,
     calories integer not null
 );
 
 create table food_date (
     food_id integer not null,
     log_date_id integer not null,
-    primary key (food_id, log_date_id)
+    primary key(food_id, log_date_id)
 );
