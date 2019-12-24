@@ -1,3 +1,12 @@
+#delete and create sites
+
+rm /etc/nginx/sites-enabled/default
+touch /etc/nginx/sites-available/flask_settings
+ln -s /etc/nginx/sites-available/flask_settings /etc/nginx/sites-enabled/flask_settings
+vim /etc/nginx/sites-enabled/flask_settings
+
+# edit the nginx file add the below code
+
 server {
     location / {
         proxy_pass http://127.0.0.1:8000;
@@ -5,3 +14,4 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
     }
 }
+
